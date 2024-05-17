@@ -41,6 +41,7 @@ class DogsController < ApplicationController
   end
 
   def format_breed(breed)
+    # Here formatting the breed name as i have seen in the sample api, that whenver someone enter any breed with space then it will split and reverese the word and add a '/' between them and then make the request to the respective api.
     breed.downcase.split(" ").reverse.join("/")
   end
 end
