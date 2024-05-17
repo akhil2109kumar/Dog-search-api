@@ -1,0 +1,5 @@
+development:
+  DOG_IMAGE_FETCHER: https://dog.ceo/api/breeds/image/random
+
+test:
+  DOG_IMAGE_FETCHER: https://dog.ceo/api/breeds/image/random
