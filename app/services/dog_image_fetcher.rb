@@ -1,8 +1,6 @@
 class DogImageFetcher
-  BASE_URL = 'https://dog.ceo/api/breed/'
-
   def self.fetch_dog_image_by_breed(breed)
-    response = RestClient.get(BASE_URL + "#{breed}/images/random")
+    response = RestClient.get("#{ENV["DOG_IMAGE_FETCHER"]}#{breed}/images/random")
     handle_response(response)
   end
 

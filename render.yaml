@@ -1,0 +1,23 @@
+databases:
+  - name: dog_search_api
+    databaseName: dog_search_api
+    user: dog_search_api_user
+    plan: free
+
+services:
+  - type: web
+    name: dog_search_api
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dog_search_api
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default

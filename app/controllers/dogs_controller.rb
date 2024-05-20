@@ -33,7 +33,7 @@ class DogsController < ApplicationController
 
   def handle_error(error)
     logger.error("Error fetching dog image: #{error.message}")
-    raise ActiveRecord::Rollback, error.response&.body || "Invalid Breed"
+    error.response&.body || "Invalid Breed"
   end
 
   def formatted_breed

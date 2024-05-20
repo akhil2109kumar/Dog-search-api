@@ -1,5 +1,12 @@
 development:
-  DOG_IMAGE_FETCHER: https://dog.ceo/api/breeds/image/random
+  # DOG_IMAGE_FETCHER: https://dog.ceo/api/breeds/image/random
+  DOG_IMAGE_FETCHER: https://dog.ceo/api/breed/
+
 
 test:
-  DOG_IMAGE_FETCHER: https://dog.ceo/api/breeds/image/random
+  DOG_IMAGE_FETCHER: https://dog.ceo/api/breed/
+
+production:
+  DOG_IMAGE_FETCHER: https://dog.ceo/api/breed/
+  DATABASE_URL: "postgresql://developer:developer@localhost:5432/dog_image_fetcher_production"
+  SECRET_KEY_BASE: "345"
